@@ -20,6 +20,18 @@
 #include <iostream>
 using namespace std;
 
+void displayPops(bool pops[][12]) {
+    for (int n = 11; n >= 0; n--) {
+        for (int m = 0; m < 12; m++) {
+            cout << ((pops[n][m] == true) ? "o" : "x");
+            //if (pops[n][m] == true)  cout << "o";
+            //else  cout << "x";
+            cout << " ";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     bool pops[12][12]{};
@@ -30,15 +42,7 @@ int main()
         }
     }
     // display pops
-    for (int n = 0; n < 12; n++) {
-        for (int m = 0; m < 12; m++) {
-           // cout << (pops[n][m] == true) ? "o" : "x"; //NOT WORK
-            if (pops[n][m] == true)  cout << "o";
-            else  cout << "x";
-            cout << " ";
-        }
-        cout << endl;
-    }
+    displayPops(pops);
 
     int x1, y1, x2, y2, nCount = 0;
     
@@ -70,15 +74,7 @@ int main()
         }
 
         //display gamebord
-        for (int n = 11; n >= 0; n--) {
-            for (int m = 0; m < 12; m++) {
-                // cout << (pops[n][m] == true) ? "o" : "x"; //NOT WORK
-                if (pops[n][m] == true)  cout << "o";
-                else  cout << "x";
-                cout << " ";
-            }
-            cout << endl;
-        }
+        displayPops(pops);
 
         //nCount++;
 
